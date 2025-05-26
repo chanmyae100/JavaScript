@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript Scope and Closures</title>
+  </head>
+  <body>
+    <h1>Javascript Scope and Closures</h1>
+    <script>
+       let globalVar = "I'm global";
+       function testScope(){
+        let localVar ="I'm local";
+        console.log(globalVar);
+        console.log(localVar);
+       }
+
+
+       testScope();
+       function outer(){
+        let count=0;
+        return function inner(){
+            count++;
+            console.log("Count:", count);
+        };
+       }
+
+
+       const counter =outer();
+       counter();
+       counter();
+       
+     </script>
+  </body>
+</html>
